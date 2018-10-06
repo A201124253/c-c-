@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 //    cout << "Hello World!" << endl;
-    int a = 123345; float b = 1234.567;
+//    int a = 123345; float b = 1234.567;
 //    printf("%-8d--",a);
 //    printf("%.2f\n",b);
 //    cout<<"xxxxxxxxxxxxxxxxxx"<<endl;
@@ -24,8 +24,32 @@ int main()
 
 //    cout<<setfill('x')<<setiosflags(ios::left)<<setw(8)<<a<<endl; //填充x
     int hour = 0, min = 0, sec = 0;//00:00:00
-    sleep(1);
-    cout<<setfill('0')<<setw(2)<<hour<<":"<<setw(2)<<min<<":"<<setw(2)<<sec<<endl;
+    //cout<<setfill('0')<<setw(2)<<hour<<":"<<setw(2)<<min<<":"<<setw(2)<<sec<<endl;
+    cout<<"请输入倒计时(时 分 秒)";
+    cin>>hour>>min>>sec;
+    while (true)
+
+        {
+            cout<<setfill('0')<<setw(2)<<hour<<":"<<setw(2)<<min<<":"<<setw(2)<<sec<<endl;
+            sleep(1);
+            sec--;
+            if(sec==-1)
+                {
+                    //sleep(1);
+                    //cout<<setfill('0')<<setw(2)<<hour<<":"<<setw(2)<<min<<":"<<setw(2)<<sec<<endl;
+                    min--;
+                    sec=59;
+                }
+            if(min==-1)
+                {
+                    //sleep(1);
+                    //cout<<setfill('0')<<setw(2)<<hour<<":"<<setw(2)<<min<<":"<<setw(2)<<sec<<endl;
+                    hour--;
+                    min=59;
+                }
+            if(hour == 0 && min == 0 && sec == 0)
+                break;
+        }
     return 0;
 
 }
