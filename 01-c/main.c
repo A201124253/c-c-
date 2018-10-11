@@ -14,3 +14,9 @@ int main()
 
 //const int a; int const a;等价
 //int *const p; 修饰p 不能变，p的内容能变
+
+int func(int a)
+{
+
+}
+int func(char b)
